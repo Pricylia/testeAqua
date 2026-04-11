@@ -1,0 +1,270 @@
+.pageWrapper {
+  background: #f7f9fc;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 40px 24px 64px;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  color: #1f1f1f;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 16px;
+  color: #66758c;
+  margin-bottom: 40px;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f1f1f;
+  margin-bottom: 20px;
+}
+
+.featured {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(320px, 0.95fr);
+  background: #fff;
+  border: 1px solid #e9eef5;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+  margin-bottom: 48px;
+}
+
+.featuredImage {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  display: block;
+}
+
+.featuredInfo {
+  padding: 32px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.featuredTitle {
+  font-size: 28px;
+  line-height: 1.18;
+  font-weight: 700;
+  color: #1f1f1f;
+  margin-bottom: 18px;
+  max-width: 360px;
+}
+
+.featuredDescription {
+  font-size: 16px;
+  line-height: 1.55;
+  color: #66758c;
+  margin-bottom: 22px;
+  max-width: 360px;
+}
+
+.meta {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  margin-bottom: 16px;
+  color: #7a8699;
+  font-size: 14px;
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.primaryButton {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(90deg, #0b7cff 0%, #0057d9 100%);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.primaryButton:hover {
+  transform: translateY(-1px);
+  opacity: 0.96;
+}
+
+.iconButton {
+  min-width: 46px;
+  height: 46px;
+  border: 1px solid #dbe4f0;
+  border-radius: 10px;
+  background: #fff;
+  color: #7a8699;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 0.2s ease;
+  flex-shrink: 0;
+}
+
+.iconButton:hover {
+  border-color: #0b7cff;
+  color: #0b7cff;
+}
+
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #b7c0cd;
+}
+
+.shareButton {
+  background: transparent;
+  border: none;
+  color: #7a8699;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s ease;
+  padding: 0;
+}
+
+.shareButton:hover {
+  color: #0b7cff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e9eef5;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.cardImage {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+.cardContent {
+  padding: 16px;
+}
+
+.cardTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1f1f1f;
+  margin-bottom: 8px;
+}
+
+.cardDescription {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #5f6b7a;
+  margin-bottom: 16px;
+}
+
+.loadMoreWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.loadMoreButton {
+  background: #fff;
+  border: 1px solid #dbe4f0;
+  border-radius: 12px;
+  padding: 14px 28px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #1f1f1f;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.loadMoreButton:hover {
+  border-color: #0b7cff;
+  color: #0b7cff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 900px) {
+  .featured {
+    grid-template-columns: 1fr;
+  }
+
+  .featuredImage {
+    height: 260px;
+  }
+
+  .featuredInfo {
+    padding: 20px;
+  }
+
+  .featuredTitle {
+    font-size: 24px;
+    max-width: 100%;
+  }
+
+  .featuredDescription {
+    max-width: 100%;
+    font-size: 16px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

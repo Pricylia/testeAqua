@@ -3,7 +3,10 @@
 import { useState } from "react";
 import { Modal } from "@/components/Modal/Modal";
 import styles from "./page.module.scss";
-import { Eye, Download, Share2, Star, BookOpen } from "lucide-react";
+import { Header } from "@/components/Header/Header";
+import { Footer } from "@/components/Footer/Footer";
+import { FeaturedMagazine } from "@/components/FeaturedMagazine/FeaturedMagazine";
+import { CardRevista } from "@/components/CardRevista/CardRevista";
 
 const edicoes = [
   {
@@ -71,6 +74,7 @@ const edicoes = [
 export default function RevistaPage() {
   const [open, setOpen] = useState(false);
   const [selectedPdf, setSelectedPdf] = useState("/revista.pdf");
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   function handleOpenPdf(pdf: string) {
     setSelectedPdf(pdf);
@@ -99,6 +103,11 @@ export default function RevistaPage() {
 
   return (
     <div className={styles.pageWrapper}>
+      <Header
+        mobileMenuOpen={mobileMenuOpen}
+        onToggleMobileMenu={() => setMobileMenuOpen((prev) => !prev)}
+      />
+
       <main className={styles.container}>
         <h1 className={styles.title}>Revista Aqua</h1>
 
@@ -106,141 +115,26 @@ export default function RevistaPage() {
           Conteúdo técnico enviado por produtores da comunidade
         </p>
 
-        <h2 className={styles.sectionTitle}>
-          <Star size={18} fill="#0b7cff" color="#0b7cff" />
-          Edição em Destaque
-        </h2>
-
-        <section className={styles.featured}>
-          <img
-            src="/images/revista-maio.jpg"
-            alt="Capa da Revista Aqua Maio 2024"
-            className={styles.featuredImage}
-          />
-
-          <div className={styles.featuredInfo}>
-            <h3 className={styles.featuredTitle}>Revista AQUA - Maio 2024</h3>
-
-            <p className={styles.featuredDescription}>
-              Tecnologias inovadoras para aumentar a produtividade e a
-              sustentabilidade na aquicultura moderna.
-            </p>
-
-            <div className={styles.meta}>
-              <span>
-                <Eye size={16} />
-                12.5k
-              </span>
-
-              <span>
-                <Download size={16} />
-                3.2k
-              </span>
-            </div>
-
-            <div className={styles.actions}>
-              <button
-                className={styles.primaryButton}
-                onClick={() => handleOpenPdf("/revista.pdf")}
-              >
-                <BookOpen size={18} />
-                Ler Revista
-              </button>
-
-              <a
-                href="/revista.pdf"
-                download
-                className={styles.iconButton}
-                aria-label="Baixar revista"
-              >
-                <Download size={18} />
-              </a>
-            </div>
-
-            <div className={styles.bottomRow}>
-              <div className={styles.stars}>
-                {Array.from({ length: 5 }).map((_, index) => (
-                  <Star key={index} size={16} />
-                ))}
-              </div>
-
-              <button
-                className={styles.shareButton}
-                onClick={() =>
-                  handleShare("Revista AQUA - Maio 2024", "/revista.pdf")
-                }
-              >
-                <Share2 size={16} />
-                Compartilhar
-              </button>
-            </div>
-          </div>
-        </section>
+        <FeaturedMagazine
+          onOpenPdf={handleOpenPdf}
+          onShare={handleShare}
+        />
 
         <h2 className={styles.sectionTitle}>Edições Anteriores</h2>
 
         <section className={styles.grid}>
           {edicoes.map((edicao) => (
-            <article key={edicao.id} className={styles.card}>
-              <img
-                src={edicao.imagem}
-                alt={edicao.titulo}
-                className={styles.cardImage}
-              />
-
-              <div className={styles.cardContent}>
-                <h3 className={styles.cardTitle}>{edicao.titulo}</h3>
-
-                <p className={styles.cardDescription}>{edicao.descricao}</p>
-
-                <div className={styles.meta}>
-                  <span>
-                    <Eye size={16} />
-                    {edicao.views}
-                  </span>
-
-                  <span>
-                    <Download size={16} />
-                    {edicao.downloads}
-                  </span>
-                </div>
-
-                <div className={styles.actions}>
-                  <button
-                    className={styles.primaryButton}
-                    onClick={() => handleOpenPdf(edicao.pdf)}
-                  >
-                    <BookOpen size={18} />
-                    Ler Revista
-                  </button>
-
-                  <a
-                    href={edicao.pdf}
-                    download
-                    className={styles.iconButton}
-                    aria-label={`Baixar ${edicao.titulo}`}
-                  >
-                    <Download size={18} />
-                  </a>
-                </div>
-
-                <div className={styles.bottomRow}>
-                  <div className={styles.stars}>
-                    {Array.from({ length: 5 }).map((_, index) => (
-                      <Star key={index} size={16} />
-                    ))}
-                  </div>
-
-                  <button
-                    className={styles.shareButton}
-                    onClick={() => handleShare(edicao.titulo, edicao.pdf)}
-                  >
-                    <Share2 size={16} />
-                    Compartilhar
-                  </button>
-                </div>
-              </div>
-            </article>
+            <CardRevista
+              key={edicao.id}
+              titulo={edicao.titulo}
+              descricao={edicao.descricao}
+              imagem={edicao.imagem}
+              pdf={edicao.pdf}
+              views={edicao.views}
+              downloads={edicao.downloads}
+              onOpenPdf={handleOpenPdf}
+              onShare={handleShare}
+            />
           ))}
         </section>
 
@@ -252,6 +146,8 @@ export default function RevistaPage() {
           <iframe src={selectedPdf} width="100%" height="100%" />
         </Modal>
       </main>
+
+      <Footer />
     </div>
   );
 }

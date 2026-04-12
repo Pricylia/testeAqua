@@ -1,0 +1,136 @@
+.card {
+  background: #fff;
+  border: 1px solid #e9eef5;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.cardImage {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+.cardContent {
+  padding: 16px;
+}
+
+.cardTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1f1f1f;
+  margin-bottom: 8px;
+}
+
+.cardDescription {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #5f6b7a;
+  margin-bottom: 16px;
+}
+
+
+.meta {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  margin-bottom: 16px;
+  color: #7a8699;
+  font-size: 14px;
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.primaryButton {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #055CE3;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.primaryButton:hover {
+  transform: translateY(-1px);
+  opacity: 0.96;
+}
+
+
+.iconButton {
+  min-width: 46px;
+  height: 46px;
+  border: 1px solid #dbe4f0;
+  border-radius: 10px;
+  background: #fff;
+  color: #7a8699;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 0.2s ease;
+  flex-shrink: 0;
+}
+
+.iconButton:hover {
+  border-color: #0b7cff;
+  color: #0b7cff;
+}
+
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #b7c0cd;
+}
+
+.shareButton {
+  background: transparent;
+  border: none;
+  color: #7a8699;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s ease;
+  padding: 0;
+}
+
+.shareButton:hover {
+  color: #0b7cff;
+}

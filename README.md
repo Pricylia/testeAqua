@@ -18,6 +18,6 @@ Projeto desenvolvido como teste para vaga de Front-End.
 
 ## Como rodar
 
-npm install
-npm install sass lucide-react
-npm run dev
+- npm install
+- npm install sass lucide-react
+- npm run dev

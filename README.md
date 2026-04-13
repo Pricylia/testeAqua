@@ -21,3 +21,7 @@ Projeto desenvolvido como teste para vaga de Front-End.
 - npm install
 - npm install sass lucide-react
 - npm run dev
+
+## Deploy
+
+https://teste-aqua.vercel.app/revista

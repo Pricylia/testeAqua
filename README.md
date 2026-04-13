@@ -6,6 +6,7 @@ Projeto desenvolvido como teste para vaga de Front-End.
 - Next.js
 - TypeScript
 - SCSS Modules
+- Lucide Icons
 
 ## Funcionalidades
 - Listagem de revistas
@@ -17,5 +18,6 @@ Projeto desenvolvido como teste para vaga de Front-End.
 
 ## Como rodar
 
-npm install  
-npm run dev
+- npm install
+- npm install sass lucide-react
+- npm run dev
